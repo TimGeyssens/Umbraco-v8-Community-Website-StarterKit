@@ -1,0 +1,16 @@
+﻿<div class="palette-preview">
+    <div class="colorset" ng-repeat="colorset in palette">
+        <div class="colorset-title" ng-bind="colorset.title"></div>
+        <div class="colorset-colors" ng-class="{'has-labels': hideLabels !== true}">
+            <span class="color-block" ng-repeat="color in colorset.colors" style="left: {{color.left}}%; width: {{color.width}}%">
+                <span class="color-block-color" style="background-color: {{color.rgb}}" ng-mouseover="mouseOver($event, color)" ng-mouseleave="mouseLeave(color)"></span>
+                <span class="color-block-desc" ng-if="hideLabels !== true">
+                    {{color.id}}<br/>{{color.rgb}}
+                </span>
+                <umb-tooltip ng-if="color.tooltip.show" event="color.tooltip.event">
+                    <span>{{color.id}}<br/>{{color.rgb}}</span>
+                </umb-tooltip>
+            </span>
+        </div>
+    </div>
+</div>

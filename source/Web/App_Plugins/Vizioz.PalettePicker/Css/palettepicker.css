@@ -1,0 +1,119 @@
+﻿/* Palette prevalue picker */
+.palette-value-picker-container .umb-pane {
+    display: flex;
+}
+
+.palette-value-picker-container .help-text {
+    font-size: 14px;
+    color: #a2a1a6;
+    line-height: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: 400;
+}
+
+.palette-value-picker textarea {
+    width: 100%;
+}
+
+/* Palette preview */
+.palette-preview {
+    display: block;
+    padding: 10px;
+}
+
+    .palette-preview .colorset .colorset-title {
+        font-size: 12px;
+    }
+
+.palette-preview .colorset .colorset-colors {
+    display: block;
+    width: 100%;
+    position: relative;
+    min-height: 45px;
+    padding-bottom: 8px;
+    box-sizing: content-box;
+}
+
+    .palette-preview .colorset .colorset-colors.has-labels {
+        min-height: 70px;
+    }
+
+    .palette-preview .colorset .colorset-colors .color-block {
+        display: block;
+        position: absolute;
+        top: 0;
+    }
+
+.palette-preview .colorset .colorset-colors .color-block .umb-tooltip {
+    text-align: center;
+}
+
+    .palette-preview .colorset .colorset-colors .color-block-color {
+        display: block;
+        height: 40px;
+        width: 100%;
+        border: 1px solid black;
+    }
+
+.palette-preview .colorset .colorset-colors .color-block-desc {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    line-height: 10px;
+    padding: 5px 0;
+}
+
+.palette-editor-preview .paletton-preview .colorset .colorset-colors .color-block-desc {
+    font-size: 9px;
+    line-height: 9px;
+}
+
+
+/* Palette picker */
+.palette-item {
+    cursor: pointer;
+    position: relative;
+}
+
+    .palette-item:hover {
+        color: #1b264f;
+        background: #fafafa;
+    }
+
+    .palette-item.selected {
+        color: #1b264f;
+    }
+
+    .palette-item.selected::before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border: 1px solid #f5c1bc;
+        border-radius: 5px;
+        box-shadow: 0 0 2px 0 #e86f63, inset 0 0 2px 0 #e86f63;
+        pointer-events: none;
+    }
+
+.palette-checkbox {
+    display: block;
+    width: 100%;
+}
+
+    .palette-checkbox input[type=radio], .paletton-checkbox input[type=checkbox] {
+        display: none;
+    }
+
+/***/
+
+.palette-property {
+    display: block;
+    width: 100%;
+}

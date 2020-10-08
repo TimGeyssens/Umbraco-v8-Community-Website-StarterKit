@@ -273,6 +273,9 @@
     <Reference Include="uSync8.Core, Version=8.7.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\uSync.Core.8.7.1\lib\net472\uSync8.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Vizioz.PalettePicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vizioz.PalettePicker.2.0.1\lib\Vizioz.PalettePicker.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\uSync8\backoffice\uSync8\dashboard.html" />
@@ -296,6 +299,17 @@
     <Content Include="App_Plugins\uSync8\uSyncService.js" />
     <Content Include="App_Plugins\uSync8\usync_871.css" />
     <Content Include="App_Plugins\uSync8\uSync_871.js" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Css\palettepicker.css" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Js\palettepicker.controller.js" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Js\palettepicker.editorprevalue.controller.js" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Js\palettepicker.preview.directive.js" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Js\palettepicker.propertyeditor.controller.js" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Js\palettepicker.valuepicker.controller.js" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Views\palettepicker.editor.html" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Views\palettepicker.editorprevaluedialog.html" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Views\palettepicker.html" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Views\palettepicker.preview.html" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\Views\palettepicker.valuepicker.html" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -337,6 +351,7 @@
     <Content Include="config\uSync8.config" />
     <Content Include="App_Plugins\uSync8\package.manifest" />
     <Content Include="App_Plugins\uSync8\addons.json" />
+    <Content Include="App_Plugins\Vizioz.PalettePicker\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />

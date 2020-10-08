@@ -1,0 +1,39 @@
+﻿{
+  "propertyEditors": [
+    {
+      "alias": "Vizioz.PalettePicker",
+      "name": "Palette Picker",
+      "icon": "icon-palette",
+      "editor": {
+        "view": "~/App_Plugins/Vizioz.PalettePicker/views/palettepicker.html",
+        "valueType": "JSON"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Color palettes",
+            "description": "Please add your predefined color palettes here",
+            "key": "palettes",
+            "view": "~/App_Plugins/Vizioz.PalettePicker/views/palettepicker.editor.html",
+            "css": [ "~/App_Plugins/Vizioz.PalettePicker/css/palettepicker.css" ],
+            "validation": [
+              {
+                "type": "Required"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "javascript": [
+    "~/App_Plugins/Vizioz.PalettePicker/js/palettepicker.propertyeditor.controller.js",
+    "~/App_Plugins/Vizioz.PalettePicker/js/palettepicker.editorprevalue.controller.js",
+    "~/App_Plugins/Vizioz.PalettePicker/js/palettepicker.controller.js",
+    "~/App_Plugins/Vizioz.PalettePicker/js/palettepicker.valuepicker.controller.js",
+    "~/App_Plugins/Vizioz.PalettePicker/js/palettepicker.preview.directive.js"
+  ],
+  "css": [
+    "~/App_Plugins/Vizioz.PalettePicker/css/palettepicker.css"
+  ]
+}

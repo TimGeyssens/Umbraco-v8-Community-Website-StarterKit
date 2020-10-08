@@ -1,0 +1,31 @@
+﻿<div class="vizioz-palette" ng-controller="Vizioz.PalettePicker.PropertyEditorController as vm">
+    <div>
+        <table class="table table-striped" ng-if="model.value && model.value.length">
+            <tbody ui-sortable="sortableOptions" ng-model="model.value">
+            <tr ng-repeat="config in model.value">
+                <td class="icon-navigation-hand" style="width: 20px;">
+                    <i class="icon icon-navigation"></i>
+                </td>
+                <td style="width: 100%;">
+                    <palette-preview value="config"></palette-preview>
+                </td>
+                <td style="width: 90px;">
+                    <div class="flex">
+                        <a class="btn btn-info" ng-click="vm.edit($index)" title="Edit">
+                            <i class="icon icon-edit"></i>
+                        </a>
+                        <a class="btn btn-danger" ng-click="vm.remove($index)" title="Delete">
+                            <i class="icon icon-trash"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <a class="btn" ng-click="vm.add()">
+                <localize key="general_add">Add</localize>
+            </a>
+        </div>
+    </div>
+</div>

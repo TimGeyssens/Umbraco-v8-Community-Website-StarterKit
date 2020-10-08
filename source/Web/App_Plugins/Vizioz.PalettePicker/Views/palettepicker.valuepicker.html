@@ -1,0 +1,39 @@
+﻿<div ng-controller="Vizioz.PalettePicker.ValuePickerController as vm">
+    <umb-editor-view>
+
+        <umb-editor-header name="model.title"
+                           name-locked="true"
+                           hide-alias="true"
+                           hide-icon="true"
+                           hide-description="true">
+        </umb-editor-header>
+
+        <umb-editor-container>
+            <umb-box ng-repeat="item in model.config.palettes" ng-click="vm.select($index)" class="palette-item" ng-class="{selected:$index===selectedIndex}">
+                <umb-box-content>
+                    <label class="palette-checkbox" for="palette-item-{{$index}}">
+                        <input id="palette-item-{{$index}}" type="radio" ng-model="model.value" ng-value="item" />
+                        <palette-preview value="item" hide-labels="true"></palette-preview>
+                    </label>
+                </umb-box-content>
+            </umb-box>
+        </umb-editor-container>
+
+        <umb-editor-footer>
+            <umb-editor-footer-content-right>
+                <umb-button type="button"
+                            button-style="link"
+                            label-key="general_close"
+                            shortcut="esc"
+                            action="vm.close()">
+                </umb-button>
+                <umb-button type="button"
+                            button-style="action"
+                            label-key="general_submit"
+                            action="vm.submit(model)">
+                </umb-button>
+            </umb-editor-footer-content-right>
+        </umb-editor-footer>
+
+    </umb-editor-view>
+</div>

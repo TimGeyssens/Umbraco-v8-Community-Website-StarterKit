@@ -1,0 +1,17 @@
+﻿<div ng-controller="Vizioz.PalettePicker.Controller as vm">
+    <div>
+        <a class="umb-node-preview-add" href="" ng-click="vm.edit()">
+            <div ng-if="!model.value">
+                <localize key="general_add" class="ng-isolate-scope">Add</localize>
+            </div>
+            <div class="palette-property" ng-if="model.value">
+                <palette-preview value="model.value" hide-labels="true"></palette-preview>
+            </div>
+        </a>
+    </div>
+    <div ng-if="model.value">
+        <a class="umb-node-preview__action umb-node-preview__action--red" title="Remove" ng-click="vm.remove()">
+            <localize key="general_remove">Remove</localize>
+        </a>
+    </div>
+</div>
