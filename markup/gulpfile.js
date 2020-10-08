@@ -16,9 +16,9 @@ function css() {
             require('tailwindcss'),
             require('cssnano')
         ]))
-        .pipe(purgeCSS({
-            content: ['./Views/**/*.cshtml', 'html/**/*.html']
-        }))
+        // .pipe(purgeCSS({
+        //     content: ['./Views/**/*.cshtml', 'html/**/*.html']
+        // }))
         .pipe(rename("main.min.css"))
         .pipe(sourcemaps.write('.', { includeContent: false, sourceRoot: '../src/styles' }))
         .pipe(dest('./css'));
