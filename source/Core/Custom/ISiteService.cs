@@ -12,8 +12,6 @@ namespace Our.Umbraco.NonProfitFramework.Core.Custom
     {
         Website GetWebsiteById(int id);
 
-        Seo GetSeoDetailsById(int id);
-
     }
 
 
