@@ -21,7 +21,7 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 {
 	/// <summary>HomePage</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel
+	public partial class HomePage : PublishedContentModel, ISeo
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -43,5 +43,40 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Canonical URL
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("canonicalURL")]
+		public global::Umbraco.Web.Models.Link CanonicalUrl => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetCanonicalUrl(this);
+
+		///<summary>
+		/// Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("description")]
+		public string Description => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetDescription(this);
+
+		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("image")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetImage(this);
+
+		///<summary>
+		/// Pagetitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("pagetitle")]
+		public string Pagetitle => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetPagetitle(this);
+
+		///<summary>
+		/// Tags
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("tags")]
+		public global::System.Collections.Generic.IEnumerable<string> Tags => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetTags(this);
 	}
 }

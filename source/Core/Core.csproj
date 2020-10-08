@@ -250,7 +250,7 @@
     <Compile Include="Models\HomePage.generated.cs" />
     <Compile Include="Models\Image.generated.cs" />
     <Compile Include="Models\Member.generated.cs" />
-    <Compile Include="Models\SeoComposition.generated.cs" />
+    <Compile Include="Models\Seo.generated.cs" />
     <Compile Include="Models\Website.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Custom\RegisterSiteServiceComposer.cs" />

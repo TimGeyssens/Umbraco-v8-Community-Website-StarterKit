@@ -16,5 +16,14 @@ namespace Our.Umbraco.NonProfitFramework.Core.Extensions
             return siteService.GetWebsiteById(umbracoHelper.AssignedContentItem.Id);
         }
 
+
+        public static Seo SeoDetails(this UW.UmbracoHelper umbracoHelper)
+        {
+
+            var siteService = UW.Composing.Current.Factory.GetInstance<ISiteService>();
+
+            return siteService.GetSeoDetailsById(umbracoHelper.AssignedContentItem.Id);
+        }
+
     }
 }

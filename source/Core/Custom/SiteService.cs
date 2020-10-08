@@ -32,6 +32,20 @@ namespace Our.Umbraco.NonProfitFramework.Core.Custom
             return website;
         }
 
-       
+
+        public Seo GetSeoDetailsById(int id)
+        {
+            Seo seo = null;
+
+            using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
+            {
+
+                seo = umbracoContextReference.UmbracoContext.Content.GetById(id) as Seo;
+            }
+
+            return seo;
+        }
+
+
     }
 }
