@@ -1,1 +1,1 @@
-Here we'll place the rendered design source (figma?) files
+Here we'll place the design source (figma?) files
