@@ -71,12 +71,5 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("pagetitle")]
 		public string Pagetitle => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetPagetitle(this);
-
-		///<summary>
-		/// Tags
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("tags")]
-		public global::System.Collections.Generic.IEnumerable<string> Tags => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetTags(this);
 	}
 }

@@ -1,9 +1,12 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
-	Layout = null;
+    Layout = null;
 }
 
-@Html.Partial("Seo")
+<head>
+    @*Add meta tags for seo*@
+    @Html.Partial("Seo")
+</head>
 
 @RenderBody()
 
