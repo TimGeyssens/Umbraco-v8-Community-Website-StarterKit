@@ -1,0 +1,132 @@
+
+.matryoshka-tabs-list {
+    margin: -20px 0 0 -20px;
+    position: sticky;
+    top:0;
+    z-index: 6;
+    background: #fff;
+    width: 100%;
+    padding:0 20px;
+}
+
+.matryoshka-tabs-list ~ .umb-group-panel {
+    margin-bottom: 0;
+}
+
+.matryoshka-tab-link {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 20px;
+    color: #1b264f;
+}
+
+.matryoshka-tab-link:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: #f6f4f4;
+    opacity: 1;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+    .matryoshka-tab-link:not(.active):hover,
+    .matryoshka-tab-link:focus {
+        color: #2152a3;
+    }
+
+    .matryoshka-tab-link.active:before {
+        opacity: 1;
+        left: 12px;
+        right: 12px;
+        height: 4px;
+        border-radius: 3px 3px 0 0;
+        background-color: #f5c1bc;
+    }
+
+    .matryoshka-tab-link:not(.active):hover:before,
+    .matryoshka-tab-link:not(.active):focus:before {
+        opacity: 1;
+        left: 12px;
+        right: 12px;
+        height: 4px;
+        border-radius: 3px 3px 0 0;
+        background-color: #e9e9eb;
+    }
+
+    .matryoshka-tab-link:focus {
+        outline: 0;
+    }
+
+/* Validation */
+
+.matryoshka-tabs-list .umb-tab .icon {
+    display: none;
+}
+
+.show-validation .matryoshka-tabs-list .umb-tab.hasError .icon {
+    display: inline;
+    position: absolute;
+    color: #d42054;
+}
+
+.show-validation .matryoshka-tabs-list .umb-tab.hasError span {
+    margin-left: 20px;
+}
+
+.matryoshka-tabs-list .umb-tab p {
+    margin: 0;
+}
+
+/* hide the "Content" dropdown (avoid confusion) */
+.dropdown-menu.umb-sub-views-nav-item__anchor_dropdown {
+    display:none;
+}
+
+.matryoshka-tab-dropdown {
+    display:none;
+    margin-top: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 3px 5px rgba(0,0,0,.15);
+}
+
+.matryoshka-tab-dropdown .umb-tab-button:focus {
+    outline:none;
+}
+
+.matryoshka-tab-link:hover .matryoshka-tab-dropdown,
+.matryoshka-tab-dropdown:hover {
+    display:block;
+}
+
+.matryoshka-tab-link-button {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity:0;
+    width:100%;
+}
+
+.matryoshka-tabbed-content-push {
+    height:20px;
+}
+
+/* moves the Grid re-order bar down so it doesn't cover the tabs */
+#umb-grid > .umb-editor-sub-header[umb-sticky-bar] {
+    top: 60px;
+}
+
+/* moves down the Grid RTE sections so it doesn't cover the tabs or re-order bar*/
+#umb-grid .umb-control.-active .mce-toolbar[style*="top: 177px;"] {
+    top: 241px !important;
+    z-index: 1000;
+}
