@@ -268,7 +268,13 @@
       <HintPath>..\packages\UmbracoCms.Web.8.8.0\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
     <Reference Include="uSync8.BackOffice, Version=8.7.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uSync.8.7.1\lib\net472\uSync8.BackOffice.dll</HintPath>
+      <HintPath>..\packages\uSync.BackOffice.Core.8.7.1\lib\net472\uSync8.BackOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="uSync8.Community.Contrib, Version=8.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.Community.Contrib.8.7.1\lib\net472\uSync8.Community.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="uSync8.ContentEdition, Version=8.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.ContentEdition.8.7.1\lib\net472\uSync8.ContentEdition.dll</HintPath>
     </Reference>
     <Reference Include="uSync8.Core, Version=8.7.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\uSync.Core.8.7.1\lib\net472\uSync8.Core.dll</HintPath>

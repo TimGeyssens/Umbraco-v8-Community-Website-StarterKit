@@ -38,6 +38,10 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		/// <summary>Pagetitle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		string Pagetitle { get; }
+
+		/// <summary>Tags</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		global::System.Collections.Generic.IEnumerable<string> Tags { get; }
 	}
 
 	/// <summary>SEO</summary>
@@ -108,5 +112,16 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		/// <summary>Static getter for Pagetitle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public static string GetPagetitle(ISeo that) => that.Value<string>("pagetitle");
+
+		///<summary>
+		/// Tags
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("tags")]
+		public global::System.Collections.Generic.IEnumerable<string> Tags => GetTags(this);
+
+		/// <summary>Static getter for Tags</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static global::System.Collections.Generic.IEnumerable<string> GetTags(ISeo that) => that.Value<global::System.Collections.Generic.IEnumerable<string>>("tags");
 	}
 }

@@ -19,26 +19,35 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Our.Umbraco.NonProfitFramework.Core.Models
 {
-	/// <summary>Website</summary>
-	[PublishedModel("website")]
-	public partial class Website : PublishedContentModel, ISettings
+	// Mixin Content Type with alias "settings"
+	/// <summary>Settings</summary>
+	public partial interface ISettings : IPublishedContent
+	{
+		/// <summary>Redir</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		global::Umbraco.Core.Models.PublishedContent.IPublishedContent UmbracoInternalRedirectId { get; }
+	}
+
+	/// <summary>Settings</summary>
+	[PublishedModel("settings")]
+	public partial class Settings : PublishedContentModel, ISettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public new const string ModelTypeAlias = "website";
+		public new const string ModelTypeAlias = "settings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Website, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Settings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Website(IPublishedContent content)
+		public Settings(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -49,6 +58,10 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("umbracoInternalRedirectId")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent UmbracoInternalRedirectId => global::Our.Umbraco.NonProfitFramework.Core.Models.Settings.GetUmbracoInternalRedirectId(this);
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent UmbracoInternalRedirectId => GetUmbracoInternalRedirectId(this);
+
+		/// <summary>Static getter for Redir</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetUmbracoInternalRedirectId(ISettings that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("umbracoInternalRedirectId");
 	}
 }

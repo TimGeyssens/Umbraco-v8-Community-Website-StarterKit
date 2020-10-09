@@ -1,6 +1,7 @@
 ﻿@inherits UmbracoViewPage<ISeo>
 
 @* Open Graph *@
+
 @if (!String.IsNullOrEmpty(Model.Pagetitle))
 {
     <meta property="og:title" content="@Model.Pagetitle">
@@ -11,14 +12,14 @@
     <meta property="og:description" content="@Model.Description">
 }
 
-@if (!String.IsNullOrEmpty(Model.Image.Url(mode: UrlMode.Absolute)))
+@if (Model.Image != null)
 {
     <meta property="og:image" content="@Model.Image.Url(mode: UrlMode.Absolute)">
 }
 
-@if (!String.IsNullOrEmpty(Model.CanonicalUrl?.Url))
+@if (Model.CanonicalUrl != null)
 {
-    <meta property="og:url" content="@(Model.CanonicalUrl?.Url)">
+    <meta property="og:url" content="@Model.CanonicalUrl.Url">
 }
 else
 {
