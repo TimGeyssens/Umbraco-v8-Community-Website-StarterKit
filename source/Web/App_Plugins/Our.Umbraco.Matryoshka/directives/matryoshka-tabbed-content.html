@@ -1,0 +1,71 @@
+﻿<div>
+    <ng-form name="tabbedContentForm">
+        <ul class="matryoshka-tabs-list umb-tabs-nav" ng-if="content.tabs.length > 1">
+            <li class="matryoshka-tab-link umb-tab" 
+              data-element="tab-{{group.label}}" 
+              matryoshka-val-tab="" 
+              id="tab{{group.label}}" 
+              ng-class="{'active' : currentTab === group.label, 'hasError' : tabHasError}" 
+              ng-repeat="group in content.tabs | limitTo: maxTabs" >
+                <p>
+                    <i class="icon icon-alert"></i>
+                    <span>{{group.label}}</span>
+                </p>
+                <button class="btn-reset matryoshka-tab-link-button" ng-click="changeTab(group.label)" type="button" role="tab"></button>
+                <umb-dropdown class="matryoshka-tab-dropdown" ng-if="groupSeparators[group.label] && groupSeparators[group.label].length > 0">
+                    <umb-dropdown-item ng-repeat="separator in groupSeparators[group.label]">
+                        <button class="btn-reset umb-tab-button" ng-click="scrollTo(group.label, separator.alias)" role="tab" type="button">
+                            <p>
+                                <span>{{separator.label}}</span>
+                            </p>
+                        </button>
+                    </umb-dropdown-item>
+                </umb-dropdown>
+            </li>
+  
+            <li data-element="tab-expand" class="umb-tab umb-tab--expand" ng-class="{ 'open': showTray }" ng-show="needTray">
+                <a class="btn-reset umb-tab-button umb-tab-button--expand" ng-click="toggleTray()" type="button">
+                    <i></i><i></i><i></i>
+                    <span class="sr-only"><localize key="visuallyHiddenTexts_tabExpand">View more options</localize></span>
+                </a>
+                <umb-dropdown class="umb-tabs-tray" ng-if="showTray" on-close="vm.hideTray()">
+                    <umb-dropdown-item ng-repeat="group in content.tabs | limitTo: overflowingTabs" ng-class="{'umb-tabs-tray-item--active': tab.active, 'hasError' : tabHasError}">
+                        <button class="btn-reset umb-tab-button" matryoshka-val-tab="" ng-click="changeTab(group.label)" role="tab" aria-selected="{currentTab === group.label}" type="button">
+                          <p>
+                            <i class="icon icon-alert"></i>
+                            <span>{{group.label}}</span>
+                          </p>
+                        </button>
+                    </umb-dropdown-item>
+                </umb-dropdown>
+            </li>
+        </ul>
+        <div class="matryoshka-tabbed-content-push" ng-if="content.tabs.length > 1"></div>
+  
+        <div class="umb-group-panel" data-element="group-{{group.alias}}" ng-repeat="group in content.tabs track by group.label">
+  
+            <div class="umb-group-panel__content matryoshka-tabbed-panel matryoshka-tab-content-{{group.alias}}" ng-hide="hide(group.label)" id="{{group.label}}">
+                <umb-property data-element="property-{{property.alias}}"
+                              ng-repeat="property in group.properties track by property.alias"
+                              property="property"
+                              show-inherit="content.variants.length > 1 && !property.culture && !activeVariant.language.isDefault"
+                              inherits-from="defaultVariant.language.name">
+
+                    <div ng-class="{'o-40 cursor-not-allowed': content.variants.length > 1 && !activeVariant.language.isDefault && !property.culture && !property.unlockInvariantValue}">
+                        <umb-property-editor model="property"
+                                             preview="content.variants.length > 1 && !activeVariant.language.isDefault && !property.culture && !property.unlockInvariantValue">
+                        </umb-property-editor>
+                    </div>
+
+                </umb-property>
+            </div>
+
+        </div>
+
+        <umb-empty-state ng-if="content.tabs.length === 0"
+                         position="center">
+            <localize key="content_noProperties"></localize>
+        </umb-empty-state>
+
+    </ng-form>
+</div>

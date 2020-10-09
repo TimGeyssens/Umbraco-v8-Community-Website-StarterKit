@@ -1,0 +1,16 @@
+﻿<div ng-controller="Matryoshka.GroupSeparator.Controller" class="our-matryoshka-group-separator" id="our-matryoshka-group-separator-{{ model.alias }}">
+    <button class="btn-reset btn-outline btn-small our-matryoshka-group-separator-collapser" type="button" ng-click="toggleCollapse()" ng-if="collapsible">
+        <span class="our-matryoshka-group-separator-collapser--collapsed">
+            Expand
+            <i class="icon-navigation-down "></i>
+        </span>
+        <span class="our-matryoshka-group-separator-collapser--expanded">
+            Collapse
+            <i class="icon-navigation-up"></i>
+        </span>
+    </button>
+    <label>
+        {{ model.label }}
+        <small ng-bind-html="model.description | preserveNewLineInHtml"></small>
+    </label>
+</div>

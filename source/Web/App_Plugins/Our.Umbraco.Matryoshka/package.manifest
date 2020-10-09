@@ -1,0 +1,47 @@
+﻿{
+    "$schema" : "http://json.schemastore.org/package.manifest",
+    "propertyEditors": [
+    {
+        "alias": "Our.Umbraco.Matryoshka.GroupSeparator",
+        "name": "Matryoshka Group Separator",
+        "editor": {
+            "view": "~/App_Plugins/Our.Umbraco.Matryoshka/group-separator.html",
+            "hideLabel": true
+        },
+        "prevalues": {
+            "fields": [
+                {
+                    "label": "Show as anchor",
+                    "description": "Should groups starting with this separator be shown as an anchor in a dropdown menu from its tab?",
+                    "key": "anchor",
+                    "view": "boolean"
+                },                
+                {
+                    "label": "Collapsible",
+                    "description": "Should this group be collapsible? And what default state should they have?",
+                    "key": "collapsible",
+                    "view": "radiobuttonlist",
+                    "config": {
+                        "prevalues": [
+                            { "value": "fixed", "label": "Fixed" },
+                            { "value": "collapsibleOpenOnLoad", "label": "Collapsible, open on load" },
+                            { "value": "collapsibleClosedOnLoad", "label": "Collapsible, closed on load" },
+                            { "value": "collapsibleOpenOnCreation", "label": "Collapsible, open on creation, closed on edit" }
+                        ]
+                    }
+                }
+            ]
+        },
+		"icon": "icon-umb-contour"
+  	}],
+    "javascript": [
+        "~/App_Plugins/Our.Umbraco.Matryoshka/content-interceptor.js",
+        "~/App_Plugins/Our.Umbraco.Matryoshka/groupseparator.controller.js",
+        "~/App_Plugins/Our.Umbraco.Matryoshka/directives/matryoshka-tabbed-content.directive.js",
+        "~/App_Plugins/Our.Umbraco.Matryoshka/directives/matryoshka-val-tab.directive.js"
+      ],
+    "css": [
+        "~/App_Plugins/Our.Umbraco.Matryoshka/group-separator.css",
+        "~/App_Plugins/Our.Umbraco.Matryoshka/tabbed-content.css"
+    ]
+}
