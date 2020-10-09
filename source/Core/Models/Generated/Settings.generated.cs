@@ -23,14 +23,6 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 	/// <summary>Settings</summary>
 	public partial interface ISettings : IPublishedContent
 	{
-		/// <summary>Footer Navigation</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> FooterNavigation { get; }
-
-		/// <summary>Main Navigation</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> MainNavigation { get; }
-
 		/// <summary>Redir</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		global::Umbraco.Core.Models.PublishedContent.IPublishedContent UmbracoInternalRedirectId { get; }
@@ -60,28 +52,6 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Footer Navigation
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("footerNavigation")]
-		public global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> FooterNavigation => GetFooterNavigation(this);
-
-		/// <summary>Static getter for Footer Navigation</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> GetFooterNavigation(ISettings that) => that.Value<global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item>>("footerNavigation");
-
-		///<summary>
-		/// Main Navigation
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("mainNavigation")]
-		public global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> MainNavigation => GetMainNavigation(this);
-
-		/// <summary>Static getter for Main Navigation</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> GetMainNavigation(ISettings that) => that.Value<global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item>>("mainNavigation");
 
 		///<summary>
 		/// Redir

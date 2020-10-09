@@ -395,6 +395,7 @@
     <Content Include="Views\Website.cshtml" />
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\Partials\Seo.cshtml" />
+    <Content Include="Views\ContentPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

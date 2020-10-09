@@ -80,20 +80,6 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		public global::System.Collections.Generic.IEnumerable<string> Tags => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetTags(this);
 
 		///<summary>
-		/// Footer Navigation
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("footerNavigation")]
-		public global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> FooterNavigation => global::Our.Umbraco.NonProfitFramework.Core.Models.Settings.GetFooterNavigation(this);
-
-		///<summary>
-		/// Main Navigation
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("mainNavigation")]
-		public global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> MainNavigation => global::Our.Umbraco.NonProfitFramework.Core.Models.Settings.GetMainNavigation(this);
-
-		///<summary>
 		/// Redir
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]

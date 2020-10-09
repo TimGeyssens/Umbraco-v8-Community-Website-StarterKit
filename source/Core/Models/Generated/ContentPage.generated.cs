@@ -19,50 +19,64 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Our.Umbraco.NonProfitFramework.Core.Models
 {
-	/// <summary>Website</summary>
-	[PublishedModel("website")]
-	public partial class Website : PublishedContentModel, ISettings
+	/// <summary>Content Page</summary>
+	[PublishedModel("contentPage")]
+	public partial class ContentPage : PublishedContentModel, ISeo
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public new const string ModelTypeAlias = "website";
+		public new const string ModelTypeAlias = "contentPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Website, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Website(IPublishedContent content)
+		public ContentPage(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Footer Navigation
+		/// Canonical URL
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("footerNavigation")]
-		public global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> FooterNavigation => this.Value<global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item>>("footerNavigation");
+		[ImplementPropertyType("canonicalURL")]
+		public global::Umbraco.Web.Models.Link CanonicalUrl => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetCanonicalUrl(this);
 
 		///<summary>
-		/// Main Navigation
+		/// Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("mainNavigation")]
-		public global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item> MainNavigation => this.Value<global::System.Collections.Generic.IEnumerable<global::AaronSadler.MegaNavV8.Core.Models.MeganavV8Item>>("mainNavigation");
+		[ImplementPropertyType("description")]
+		public string Description => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetDescription(this);
 
 		///<summary>
-		/// Redir
+		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("umbracoInternalRedirectId")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent UmbracoInternalRedirectId => global::Our.Umbraco.NonProfitFramework.Core.Models.Settings.GetUmbracoInternalRedirectId(this);
+		[ImplementPropertyType("image")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Image => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetImage(this);
+
+		///<summary>
+		/// Pagetitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("pagetitle")]
+		public string Pagetitle => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetPagetitle(this);
+
+		///<summary>
+		/// Tags
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("tags")]
+		public global::System.Collections.Generic.IEnumerable<string> Tags => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetTags(this);
 	}
 }
