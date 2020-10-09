@@ -1,4 +1,6 @@
 # Non Profit Org Starter project/kit for Umbraco v8
+[![Build status](https://ci.appveyor.com/api/projects/status/0m4c9m5ko2wfsfut?svg=true)](https://ci.appveyor.com/project/TimGeyssens/umbraco-v8-community-website-starterkit)
+
 The goal of this repo is to have a community maintained starter project/kit for #umbraco v8 following best practices.
 
 For more details check out the blog post: [https://dev.to/timgeyssens/how-to-join-the-fun-and-get-started-with-contributing-to-the-umbraco-community-starter-project-kit-36gn](https://dev.to/timgeyssens/how-to-join-the-fun-and-get-started-with-contributing-to-the-umbraco-community-starter-project-kit-36gn)
