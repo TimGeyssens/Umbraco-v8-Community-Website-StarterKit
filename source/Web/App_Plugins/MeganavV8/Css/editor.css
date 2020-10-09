@@ -1,0 +1,80 @@
+﻿.meganav-editor {
+    display: block;
+    max-width: 800px;
+}
+
+.meganav-item .umb-node-preview {
+    padding: 8px 0;
+    border-bottom: 1px solid #e9e9eb;
+}
+/* Fade unpublished and hidden items */
+.meganav-item--unpublished,
+.meganav-item--navihide {
+    opacity: .5;
+}
+
+.meganav-item--unpublished + .angular-ui-tree-nodes,
+.meganav-item--navihide + .angular-ui-tree-nodes {
+    opacity: .5;
+}
+/* Highlight hidden items */
+.meganav-item--navihide,
+.meganav-item--navihide:hover {
+    border: 1px dotted;
+    border-color: red;
+}
+/* Angular UI Tree */
+.angular-ui-tree-nodes {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.angular-ui-tree-nodes a:link[data-nodrag] {
+    cursor: pointer;
+}
+
+.angular-ui-tree-nodes .angular-ui-tree-nodes {
+    padding-left: 20px;
+}
+
+.angular-ui-tree-hidden {
+    display: none;
+}
+
+.angular-ui-tree-node,
+.angular-ui-tree-placeholder {
+    position: relative;
+    min-height: 20px;
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+}
+
+.angular-ui-tree-placeholder {
+    min-height: 30px;
+    margin: 5px 0;
+    padding: 0;
+    border: 1px dashed #1b264f;
+    box-sizing: border-box;
+}
+
+.angular-ui-tree-handle {
+    cursor: move;
+}
+
+.angular-ui-tree-drag {
+    position: absolute;
+    opacity: .8;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.meganav-editor-button {
+    width: 40px;
+}
+
+.meganav-editor-buttons {
+    padding-bottom: 40px;
+}

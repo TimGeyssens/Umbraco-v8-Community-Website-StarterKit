@@ -1,0 +1,82 @@
+﻿<div ng-controller="Our.Umbraco.MeganavV8.MeganavController" class="meganav-editor">
+    <div class="meganav-editor-buttons">
+        <a class="btn btn-primary" ng-click="expandAll()">Expand all</a>
+        <a class="btn btn-secondary" ng-click="collapseAll()">Collapse all</a>
+    </div>
+    <ng-form name="meganavEditorForm">
+
+        <!-- meganav sortable tree -->
+        <div ui-tree data-max-depth="{{model.config.maxDepth}}">
+
+            <ol ui-tree-nodes ng-model="items">
+
+                <li ng-repeat="item in items" ui-tree-node ng-include="'nav_item_template.html'"></li>
+
+            </ol>
+
+        </div>
+
+        <!-- add nav items -->
+        <a href="" class="umb-node-preview-add" data-nodrag ng-click="add()" prevent-default>
+            <localize key="general_add">Add</localize>
+        </a>
+
+    </ng-form>
+
+    <!-- repeatable nav item template -->
+    <script type="text/ng-template" id="nav_item_template.html">
+
+        <div ui-tree-handle class="meganav-item"
+             ng-class="{'meganav-item--unpublished': item.published === false, 'meganav-item--navihide': isVisible(item) === false}">
+
+            <div class="umb-node-preview" ng-class="{'umb-node-preview--sortable': sortable, 'umb-node-preview--unpublished': published === false}">
+                <div class="flex">
+                    <!-- div keeps icon and nodename from wrapping -->
+                    <i ng-if="item.icon" class="umb-node-preview__icon {{ item.icon }}" aria-hidden="true"></i>
+                    <div class="umb-node-preview__content">
+
+                        <div class="umb-node-preview__name" ng-attr-title="{{item.title || item.name}}">{{ item.title || item.name }}</div>
+                        <div class="umb-node-preview__description" ng-if="item.url">{{ item.url }}</div>
+                    </div>
+                </div>
+                <div class="umb-node-preview__actions">
+                    <a class="umb-node-preview__action"
+                       title="Edit {{name}}"
+                       ng-href="{{editUrl}}"
+                       data-nodrag
+                       ng-click="edit(item)">
+                        <localize key="general_edit">Edit</localize>
+                        <span class="sr-only">{{name}}</span>
+                    </a>
+
+                    <a class="umb-node-preview__action umb-node-preview__action--red"
+                       title="Remove {{name}}"
+                       ng-href="{{removeUrl}}"
+                       data-nodrag
+                       ng-click="remove(item)">
+                        <localize key="general_remove">Remove</localize>
+                        <span class="sr-only">{{name}}</span>
+                    </a>
+                    <div class="meganav-editor-button">
+                        <a class="btn btn-success btn-xs" ng-if="item.children && item.children.length > 0" data-nodrag ng-click="editItem(item)">
+                            <i ng-class="{
+                            'fa fa-plus': item.collapsed,
+                            'fa fa-minus': !item.collapsed
+                         }"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <ol ui-tree-nodes ng-model="item.children" ng-show="!item.collapsed">
+
+            <li ng-repeat="item in item.children" ui-tree-node ng-include="'nav_item_template.html'"></li>
+
+        </ol>
+
+    </script>
+
+</div>
