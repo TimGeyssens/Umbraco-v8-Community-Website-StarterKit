@@ -1,0 +1,10 @@
+﻿{
+  "javascript": [
+    "~/App_Plugins/MeganavV8/js/meganavv8.controller.js",
+    "~/App_Plugins/MeganavV8/js/meganavv8.resource.js",
+    "~/App_Plugins/MeganavV8/js/angular-ui-tree.js"
+  ],
+  "css": [
+    "~/App_Plugins/MeganavV8/css/editor.css"
+  ]
+}

@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AaronSadler.MegaNavV8.Api, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AaronSadler.MegaNavV8.Api.8.1.1\lib\net472\AaronSadler.MegaNavV8.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="AaronSadler.MegaNavV8.Core, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AaronSadler.MegaNavV8.Core.8.1.1\lib\net472\AaronSadler.MegaNavV8.Core.dll</HintPath>
+    </Reference>
     <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
       <HintPath>..\packages\AngleSharp.0.9.11\lib\net45\AngleSharp.dll</HintPath>
     </Reference>
@@ -284,6 +290,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\MeganavV8\Css\editor.css" />
+    <Content Include="App_Plugins\MeganavV8\Js\angular-ui-tree.js" />
+    <Content Include="App_Plugins\MeganavV8\Js\meganavv8.controller.js" />
+    <Content Include="App_Plugins\MeganavV8\Js\meganavv8.resource.js" />
+    <Content Include="App_Plugins\MeganavV8\Views\editor.html" />
+    <Content Include="App_Plugins\MeganavV8\Views\settings.html" />
     <Content Include="App_Plugins\Our.Umbraco.Matryoshka\content-interceptor.js" />
     <Content Include="App_Plugins\Our.Umbraco.Matryoshka\directives\matryoshka-tabbed-content.directive.js" />
     <Content Include="App_Plugins\Our.Umbraco.Matryoshka\directives\matryoshka-tabbed-content.html" />
@@ -367,6 +379,7 @@
     <Content Include="App_Plugins\uSync8\addons.json" />
     <Content Include="App_Plugins\Vizioz.PalettePicker\package.manifest" />
     <Content Include="App_Plugins\Our.Umbraco.Matryoshka\package.manifest" />
+    <Content Include="App_Plugins\MeganavV8\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
