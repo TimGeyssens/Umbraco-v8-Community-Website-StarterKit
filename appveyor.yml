@@ -1,0 +1,7 @@
+image: Visual Studio 2019
+
+# Do not build on tags
+skip_tags: true
+
+before_build:
+  - ps: nuget restore source/Our.Umbraco.NonProfitFramework.sln
