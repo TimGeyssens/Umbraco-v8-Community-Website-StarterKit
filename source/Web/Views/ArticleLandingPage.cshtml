@@ -1,0 +1,51 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticleLandingPage>
+@using ContentModels = Our.Umbraco.NonProfitFramework.Core.Models;
+@using Our.Umbraco.NonProfitFramework.Core.Constants;
+
+@{
+    Layout = "_Layout.cshtml";
+    // articles are ordered by create date at the moment. However, there is a published date property on the doc type,
+    // it would be better to use publish date if populated and fall back to create date. Might need a controller?
+}
+
+<section id="article-landing-page" class="page-content">
+
+    @if (Model.BannerImage != null)
+    {
+        @Html.Partial("_PageBanner")
+    }
+
+    <div class="container">
+
+        <!--block list output here maybe?-->
+
+        <div class="row">
+            @foreach (var item in Model.Children<ArticlePage>().OrderByDescending(x => x.CreateDate))
+            {
+                <!--fallback to a defualt image if we dont have one-->
+                var imgUrl = item.PageImage != null ? item.GetCropUrl("pageImage", "listingImage") : Global.PlaceholderImage.ArticleListingImage;
+
+                <div class="col-md-4">
+                    <figure>
+                        <img class="img-fluid" src="@imgUrl" alt="@item.Heading.ToLower()" title="@item.Heading.ToLower()" />
+                    </figure>
+
+                    <h4>
+                        <a href="@item.Url()" title="@item.Heading.ToLower()">
+                            @item.Heading
+                        </a>
+
+                    </h4>
+                    <!--
+                        block list output from article page here maybe?
+                        usually i truncate x chars from the main content
+                        update p tags when the output is known
+                    -->
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
+                
+                    <small>@item.CreateDate.ToString("dddd, dd MMMM yyyy")</small>
+                </div>
+            }
+        </div>
+    </div>
+</section>

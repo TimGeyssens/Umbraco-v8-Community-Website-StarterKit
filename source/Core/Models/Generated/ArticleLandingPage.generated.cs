@@ -19,30 +19,51 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Our.Umbraco.NonProfitFramework.Core.Models
 {
-	/// <summary>Content Page</summary>
-	[PublishedModel("contentPage")]
-	public partial class ContentPage : PublishedContentModel, ISeo
+	/// <summary>Article Landing Page</summary>
+	[PublishedModel("articleLandingPage")]
+	public partial class ArticleLandingPage : PublishedContentModel, IPageBanner, ISeo, IStandardPage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public new const string ModelTypeAlias = "contentPage";
+		public new const string ModelTypeAlias = "articleLandingPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ArticleLandingPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContentPage(IPublishedContent content)
+		public ArticleLandingPage(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Banner Heading: The heading used in the page banner
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("bannerHeading")]
+		public string BannerHeading => global::Our.Umbraco.NonProfitFramework.Core.Models.PageBanner.GetBannerHeading(this);
+
+		///<summary>
+		/// Banner Image: Upload a page banner image. 1920x450
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("bannerImage")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ImageCropperValue BannerImage => global::Our.Umbraco.NonProfitFramework.Core.Models.PageBanner.GetBannerImage(this);
+
+		///<summary>
+		/// Strapline: A small strapline to display beneath the banner heading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("strapline")]
+		public string Strapline => global::Our.Umbraco.NonProfitFramework.Core.Models.PageBanner.GetStrapline(this);
 
 		///<summary>
 		/// Canonical URL: Specify a canonical URL is there is a preferred version of the web page
@@ -78,5 +99,19 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("tags")]
 		public global::System.Collections.Generic.IEnumerable<string> Tags => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetTags(this);
+
+		///<summary>
+		/// Content: The main content for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("content")]
+		public global::Umbraco.Core.Models.Blocks.BlockListModel Content => global::Our.Umbraco.NonProfitFramework.Core.Models.StandardPage.GetContent(this);
+
+		///<summary>
+		/// Heading: The heading for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("heading")]
+		public string Heading => global::Our.Umbraco.NonProfitFramework.Core.Models.StandardPage.GetHeading(this);
 	}
 }
