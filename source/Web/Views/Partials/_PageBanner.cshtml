@@ -1,0 +1,36 @@
+﻿@inherits UmbracoViewPage<IPageBanner>
+
+<div class="banner-image" style="background-image: url('@Url.GetCropUrl(Model.BannerImage)');">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="content">
+                    <!--would prefer page heading as the fallback ??-->
+                    <h2>@(!string.IsNullOrEmpty(Model.BannerHeading) ? Model.BannerHeading : Model.Name)</h2>
+                    @if (!string.IsNullOrEmpty(Model.Strapline))
+                    {
+                        <p class="strapline">@Model.Strapline</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    TO BE DELETED: temp styles to verify banner image renders
+    Will need to modify crop sizes to be appropriate and add
+    styles
+    -->
+<style>
+    .banner-image {
+        background-repeat: no-repeat;
+        padding: 150px 0;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        color: #fff;
+    }
+</style>

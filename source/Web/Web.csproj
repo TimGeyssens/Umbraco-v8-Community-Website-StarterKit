@@ -357,6 +357,7 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="Global.asax" />
+    <Content Include="Static\Placeholders\article-listing-placehlder.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -396,6 +397,9 @@
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\Partials\Seo.cshtml" />
     <Content Include="Views\ContentPage.cshtml" />
+    <Content Include="Views\ArticleLandingPage.cshtml" />
+    <Content Include="Views\ArticlePage.cshtml" />
+    <Content Include="Views\Partials\_PageBanner.cshtml" />
     <Content Include="Views\FAQPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

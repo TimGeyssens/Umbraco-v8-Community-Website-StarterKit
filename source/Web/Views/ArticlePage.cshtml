@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlePage>
+@using ContentModels = Our.Umbraco.NonProfitFramework.Core.Models;
+@{
+    Layout = "_Layout.cshtml";
+}
+
+<section id="article-page" class="page-content">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>@Model.Heading</h2>
+                @if (Model.PageImage != null)
+                {
+                    <img src="@Model.GetCropUrl("pageImage", "pageImage" )" title="@Model.Heading.ToLower()" alt="@Model.Heading.ToLower()" />
+                }
+
+                <!--block list output here maybe?-->
+            </div>
+        </div>
+    </div>
+</section>
