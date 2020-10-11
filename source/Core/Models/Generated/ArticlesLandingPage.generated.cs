@@ -19,30 +19,44 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Our.Umbraco.NonProfitFramework.Core.Models
 {
-	/// <summary>Article Landing Page</summary>
-	[PublishedModel("articleLandingPage")]
-	public partial class ArticleLandingPage : PublishedContentModel, IPageBanner, ISeo, IStandardPage
+	/// <summary>Articles Landing Page</summary>
+	[PublishedModel("articlesLandingPage")]
+	public partial class ArticlesLandingPage : PublishedContentModel, IContent, IPageBanner, ISeo
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public new const string ModelTypeAlias = "articleLandingPage";
+		public new const string ModelTypeAlias = "articlesLandingPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ArticleLandingPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ArticlesLandingPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ArticleLandingPage(IPublishedContent content)
+		public ArticlesLandingPage(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Heading: The heading for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("heading")]
+		public string Heading => global::Our.Umbraco.NonProfitFramework.Core.Models.Content.GetHeading(this);
+
+		///<summary>
+		/// Content: The main content for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainContent")]
+		public global::Umbraco.Core.Models.Blocks.BlockListModel MainContent => global::Our.Umbraco.NonProfitFramework.Core.Models.Content.GetMainContent(this);
 
 		///<summary>
 		/// Banner Heading: The heading used in the page banner
@@ -99,19 +113,5 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("tags")]
 		public global::System.Collections.Generic.IEnumerable<string> Tags => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetTags(this);
-
-		///<summary>
-		/// Content: The main content for the page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("content")]
-		public global::Umbraco.Core.Models.Blocks.BlockListModel Content => global::Our.Umbraco.NonProfitFramework.Core.Models.StandardPage.GetContent(this);
-
-		///<summary>
-		/// Heading: The heading for the page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("heading")]
-		public string Heading => global::Our.Umbraco.NonProfitFramework.Core.Models.StandardPage.GetHeading(this);
 	}
 }

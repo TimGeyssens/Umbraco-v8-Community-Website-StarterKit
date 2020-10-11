@@ -397,10 +397,10 @@
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\Partials\Seo.cshtml" />
     <Content Include="Views\ContentPage.cshtml" />
-    <Content Include="Views\ArticleLandingPage.cshtml" />
     <Content Include="Views\ArticlePage.cshtml" />
     <Content Include="Views\Partials\_PageBanner.cshtml" />
     <Content Include="Views\FAQPage.cshtml" />
+    <Content Include="Views\ArticlesLandingPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -19,54 +19,43 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Our.Umbraco.NonProfitFramework.Core.Models
 {
-	// Mixin Content Type with alias "standardPage"
-	/// <summary>Standard Page</summary>
-	public partial interface IStandardPage : IPublishedContent
+	// Mixin Content Type with alias "content"
+	/// <summary>Content</summary>
+	public partial interface IContent : IPublishedContent
 	{
-		/// <summary>Content</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		global::Umbraco.Core.Models.Blocks.BlockListModel Content { get; }
-
 		/// <summary>Heading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		string Heading { get; }
+
+		/// <summary>Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		global::Umbraco.Core.Models.Blocks.BlockListModel MainContent { get; }
 	}
 
-	/// <summary>Standard Page</summary>
-	[PublishedModel("standardPage")]
-	public partial class StandardPage : PublishedContentModel, IStandardPage
+	/// <summary>Content</summary>
+	[PublishedModel("content")]
+	public partial class Content : PublishedContentModel, IContent
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public new const string ModelTypeAlias = "standardPage";
+		public new const string ModelTypeAlias = "content";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<StandardPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Content, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public StandardPage(IPublishedContent content)
+		public Content(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Content: The main content for the page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("content")]
-		public global::Umbraco.Core.Models.Blocks.BlockListModel Content => GetContent(this);
-
-		/// <summary>Static getter for Content</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static global::Umbraco.Core.Models.Blocks.BlockListModel GetContent(IStandardPage that) => that.Value<global::Umbraco.Core.Models.Blocks.BlockListModel>("content");
 
 		///<summary>
 		/// Heading: The heading for the page
@@ -77,6 +66,17 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 
 		/// <summary>Static getter for Heading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static string GetHeading(IStandardPage that) => that.Value<string>("heading");
+		public static string GetHeading(IContent that) => that.Value<string>("heading");
+
+		///<summary>
+		/// Content: The main content for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainContent")]
+		public global::Umbraco.Core.Models.Blocks.BlockListModel MainContent => GetMainContent(this);
+
+		/// <summary>Static getter for Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static global::Umbraco.Core.Models.Blocks.BlockListModel GetMainContent(IContent that) => that.Value<global::Umbraco.Core.Models.Blocks.BlockListModel>("mainContent");
 	}
 }

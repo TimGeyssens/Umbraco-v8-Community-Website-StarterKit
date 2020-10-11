@@ -21,7 +21,7 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 {
 	/// <summary>Article Page</summary>
 	[PublishedModel("articlePage")]
-	public partial class ArticlePage : PublishedContentModel, ISeo, IStandardPage
+	public partial class ArticlePage : PublishedContentModel, IContent, ISeo, ITeaser
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -66,6 +66,20 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		public global::System.DateTime PublishedDate => this.Value<global::System.DateTime>("publishedDate");
 
 		///<summary>
+		/// Heading: The heading for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("heading")]
+		public string Heading => global::Our.Umbraco.NonProfitFramework.Core.Models.Content.GetHeading(this);
+
+		///<summary>
+		/// Content: The main content for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainContent")]
+		public global::Umbraco.Core.Models.Blocks.BlockListModel MainContent => global::Our.Umbraco.NonProfitFramework.Core.Models.Content.GetMainContent(this);
+
+		///<summary>
 		/// Canonical URL: Specify a canonical URL is there is a preferred version of the web page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
@@ -101,17 +115,17 @@ namespace Our.Umbraco.NonProfitFramework.Core.Models
 		public global::System.Collections.Generic.IEnumerable<string> Tags => global::Our.Umbraco.NonProfitFramework.Core.Models.Seo.GetTags(this);
 
 		///<summary>
-		/// Content: The main content for the page
+		/// Teaser Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("content")]
-		public global::Umbraco.Core.Models.Blocks.BlockListModel Content => global::Our.Umbraco.NonProfitFramework.Core.Models.StandardPage.GetContent(this);
+		[ImplementPropertyType("teaserImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent TeaserImage => global::Our.Umbraco.NonProfitFramework.Core.Models.Teaser.GetTeaserImage(this);
 
 		///<summary>
-		/// Heading: The heading for the page
+		/// Teaser Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("heading")]
-		public string Heading => global::Our.Umbraco.NonProfitFramework.Core.Models.StandardPage.GetHeading(this);
+		[ImplementPropertyType("teaserText")]
+		public global::System.Web.IHtmlString TeaserText => global::Our.Umbraco.NonProfitFramework.Core.Models.Teaser.GetTeaserText(this);
 	}
 }
