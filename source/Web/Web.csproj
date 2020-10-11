@@ -400,6 +400,7 @@
     <Content Include="Views\ArticleLandingPage.cshtml" />
     <Content Include="Views\ArticlePage.cshtml" />
     <Content Include="Views\Partials\_PageBanner.cshtml" />
+    <Content Include="Views\FAQPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

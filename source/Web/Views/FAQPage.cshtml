@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.FaqPage>
+@using ContentModels = Our.Umbraco.NonProfitFramework.Core.Models;
+@{
+	Layout = "_Layout.cshtml";
+}
+
+@if (Model.Entries.Any())
+{
+	<dl>
+		@foreach(var entry in Model.Entries)
+        {
+			<dt>@entry.Question</dt>
+			<dd>@entry.Answer</dd>
+        }
+	</dl>
+}

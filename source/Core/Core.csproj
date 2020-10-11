@@ -252,6 +252,8 @@
     <Compile Include="Models\Generated\ArticleLandingPage.generated.cs" />
     <Compile Include="Models\Generated\ArticlePage.generated.cs" />
     <Compile Include="Models\Generated\ContentPage.generated.cs" />
+    <Compile Include="Models\Generated\FAqentry.generated.cs" />
+    <Compile Include="Models\Generated\FaqPage.generated.cs" />
     <Compile Include="Models\Generated\File.generated.cs" />
     <Compile Include="Models\Generated\Folder.generated.cs" />
     <Compile Include="Models\Generated\HomePage.generated.cs" />
