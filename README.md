@@ -6,8 +6,8 @@ The goal of this repo is to have a community maintained starter project/kit for 
 For more details check out the blog post: [https://dev.to/timgeyssens/how-to-join-the-fun-and-get-started-with-contributing-to-the-umbraco-community-starter-project-kit-36gn](https://dev.to/timgeyssens/how-to-join-the-fun-and-get-started-with-contributing-to-the-umbraco-community-starter-project-kit-36gn)
 
 ## Backend credentials
-Backend user: people@umbracocommunity.com
-Backend pw: g5##fsS?TK4xfN*J
+- Backend user: people@umbracocommunity.com
+- Backend pw: g5##fsS?TK4xfN*J
 
 ## Details for pull request
 **Don't commit the db** (the file Umbraco.sdf), use the usync files, **run usync import after initial startup** (and also if you fetch new commits from origin)
