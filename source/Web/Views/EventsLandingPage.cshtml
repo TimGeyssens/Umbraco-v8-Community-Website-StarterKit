@@ -1,0 +1,295 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.EventsLandingPage>
+@using ContentModels = Our.Umbraco.NonProfitFramework.Core.Models;
+@using Our.Umbraco.NonProfitFramework.Core.Constants;
+
+@{
+    Layout = "_Layout.cshtml";
+
+    <!--we dont really want to show events that have passed?
+        if we do remove the where clause-->
+    var events = Model.Children<EventPage>()
+        .Where(x => x.StartDate > DateTime.Now)
+        .OrderBy(x => x.StartDate);
+}
+
+
+<section class="section pt-0">
+
+    @if (Model.BannerImage != null)
+    {
+        @Html.Partial("_PageBanner")
+    }
+
+    <div class="container">
+        <div class="row">
+
+            <!--filters need to be made dynamic-->
+            <div class="col-lg-3">
+                <div class="left-sidebar">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card mt-4">
+                            <a data-toggle="collapse" href="#collapseOne" class="filter-list" aria-expanded="true" aria-controls="collapseOne">
+                                <div class="card-header" id="headingOne">
+                                    <h6 class="mb-0 f-18">Filter A</h6>
+                                </div>
+                            </a>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+                                <div class="card-body p-0">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio1">Example Filter 1</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio2">Example Filter 2</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio3">Example Filter 3</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio4">Example Filter 4</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio5">Example Filter 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mt-4">
+                            <a data-toggle="collapse" href="#collapsetwo" class="filter-list" aria-expanded="true" aria-controls="collapsetwo">
+                                <div class="card-header" id="headingtwo">
+                                    <h6 class="mb-0 f-18">Filter B</h6>
+                                </div>
+                            </a>
+                            <div id="collapsetwo" class="collapse show" aria-labelledby="headingtwo">
+                                <div class="card-body p-0">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio7" name="customRadio1" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio7">Example Filter 1</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio8" name="customRadio1" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio8">Example Filter 2</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio9" name="customRadio1" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio9">Example Filter 3</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio10" name="customRadio1" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio10">Example Filter 4</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio11" name="customRadio1" class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio11">Example Filter 5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <div class="show-results mt-4">
+                            <div class="float-left">
+                                <!--needs to be dynamic .count on the results-->
+                                <h5 class="text-dark mb-0 pt-2 f-18">Showing results x-y</h5>
+                            </div>
+                            <div class="sort-button float-right">
+                                <select class="nice-select">
+                                    <option data-display="Select">Filter by</option>
+                                    <option value="1">Newest</option>
+                                    <option value="2">Oldest</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @foreach (var item in events)
+                {
+
+                    var imgUrl = item.PageImage != null ? item.GetCropUrl("pageImage", "listingImage") : Global.PlaceholderImage.EventListingImage;
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="event-list-box mt-4">
+                                <div class="p-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-2">
+                                            <div class="event-img">
+                                                <img src="@imgUrl" alt="@item.Heading.ToLower()" title="@item.Heading.ToLower()" class="img-fluid mx-auto d-block">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7 col-md-9">
+                                            <div class="event-list-desc">
+
+                                                <h6 class="mb-2">
+                                                    <a href="@item.Url()" alt="@item.Name.ToLower()" title="@item.Name.ToLower()">
+                                                        @(!string.IsNullOrEmpty(item.Heading) ? item.Heading : item.Name)
+                                                    </a>
+                                                </h6>
+
+
+                                                @if (item.StartDate != null && item.StartDate != DateTime.MinValue)
+                                                {
+                                                    <div class="date-box"><i class="fa fa-calendar fa-fw"></i> @item.StartDate.ToString("dddd, dd MMMM yyyy")</div>
+                                                }
+                                                @*@if (item.EndDate != null && item.EndDate != DateTime.MinValue)
+                                                    {
+
+                                                        <div class="date-box">End @item.StartDate.ToString("dddd, dd MMMM yyyy")</div>
+                                                    }*@
+
+
+                                                <p class="text-muted mb-0">
+                                                    <i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>
+                                                    @if (item.StartDate != null && item.StartDate != DateTime.MinValue)
+                                                    {
+                                                        @item.StartDate.ToString("HH:mm")
+                                                    }
+                                                    @if (item.EndDate != null && item.EndDate.Hour > 0)
+                                                    {
+                                                        <span> - </span>
+                                                        @item.EndDate.ToString("HH:mm")
+                                                    }
+                                                </p>
+
+                                                @if (!string.IsNullOrEmpty(item.Location))
+                                                {
+                                                    <p class="text-muted mb-0"><i class="fa fa-building mr-2 fa-fw"></i>@item.Venue</p>
+                                                }
+
+                                                @if (!string.IsNullOrEmpty(item.Location))
+                                                {
+                                                    <!--swap this for google maps?-->
+
+                                                    <p class="text-muted mb-0"><i class="fa fa-map-marker mr-2 fa-fw"></i>@item.Location</p>
+
+                                                }
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            
+                                            <div class="event-list-button-sm text-right">
+
+                                                @{
+                                                    int dayCount = 1;
+
+                                                    if (item.StartDate != null && item.StartDate != DateTime.MinValue
+                                                        && item.EndDate != null && item.EndDate != DateTime.MinValue)
+                                                    {
+                                                        dayCount = ((int)Math.Round((item.EndDate - item.StartDate).TotalDays, MidpointRounding.ToEven));
+                                                    }
+                                                }
+
+                                                <span class="badge badge-success">Duration @(dayCount <= 1 ? "1 day" : dayCount + " days")</span>
+
+                                                <div class="mt-3">
+                                                    <a href="@item.Url()" title="@item.Heading.ToLower()" class="btn btn-primary">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    a {
+        text-decoration: none !important;
+        outline: none;
+    }
+
+    .event-list-box {
+        border: 1px solid #ececec;
+        border-radius: 6px;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .event-list-desc h6 {
+        font-size: 18px;
+    }
+
+    .event-list-desc p {
+        line-height: 1.8;
+        font-size: 15px;
+    }
+
+    .badge {
+        padding: .45em .8em;
+        font-weight: 400;
+    }
+
+    .badge-success {
+        color: #fff;
+        background-color: #28a745;
+    }
+
+    .card-header {
+        background-color: transparent;
+        margin-bottom: 0 !important;
+    }
+
+    .custom-control-label:before {
+        border: 1px solid #777777;
+        background-color: transparent;
+        width: 17px;
+        height: 17px;
+        top: 3px;
+    }
+
+    .custom-control-label:after {
+        width: 18px;
+        height: 18px;
+        top: 2px;
+        left: -25px;
+    }
+
+    .custom-control {
+        margin: 11px 20px;
+    }
+
+    .custom-radio .custom-control-input:checked ~ .custom-control-label:before {
+        background-color: #ff4f6c;
+        border-color: #ff4f6c;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .accordion .card {
+        border-top-left-radius: 6px !important;
+        border-top-right-radius: 6px !important;
+    }
+
+    .left-sidebar .card-body {
+        border-bottom: 1px solid #ececec;
+    }
+</style>
+
