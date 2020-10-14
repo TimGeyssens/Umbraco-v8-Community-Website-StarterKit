@@ -10,7 +10,7 @@ Once built, log in to the back end with the following credentials
  - Backend user: people@umbracocommunity.com
  - Backend pw: g5##fsS?TK4xfN*J
 
-Once logged in, you will need to restore the site from within Usync in the Settings section, import everything by clicking the import dropdown and choosing import everything. Let this run and it will create the document types and content for the site needed.
+Once logged in, you will need to restore the site from within uSync in the Settings section, import everything by clicking the import dropdown and choosing import everything. Let this run and it will create the document types and content for the site needed.
 
 ![Import content](/docs/img/getting-started-uSync.png)
 
