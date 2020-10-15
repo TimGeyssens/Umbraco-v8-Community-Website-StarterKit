@@ -15,10 +15,10 @@ namespace Our.Umbraco.NonProfitFramework.Core.Custom
    
   
     [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
-    public class CustomEventComposer : ComponentComposer<CustomEventComponent>
+    public class StandardsComposer : ComponentComposer<StandardsComponent>
     { }
 
-    public class CustomEventComponent : IComponent
+    public class StandardsComponent : IComponent
     {
 
         public void Initialize()

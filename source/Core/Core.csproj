@@ -60,8 +60,14 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="ImageProcessor, Version=2.7.0.100, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ImageProcessor.2.7.0.100\lib\net452\ImageProcessor.dll</HintPath>
+    <Reference Include="ImageProcessor, Version=2.9.0.207, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.9.0\lib\net452\ImageProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor.Plugins.WebP, Version=1.3.0.152, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Plugins.WebP.1.3.0\lib\net452\ImageProcessor.Plugins.WebP.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=4.12.1.216, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Web.4.12.1\lib\net452\ImageProcessor.Web.dll</HintPath>
     </Reference>
     <Reference Include="LightInject, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LightInject.5.4.0\lib\net46\LightInject.dll</HintPath>
@@ -95,6 +101,9 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.2\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -246,9 +255,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Global.cs" />
-    <Compile Include="Custom\CustomComponent.cs" />
-    <Compile Include="Custom\ISiteService.cs" />
+    <Compile Include="Custom\Components\AutoWebPComponent.cs" />
+    <Compile Include="Custom\Components\StandardsComponent.cs" />
+    <Compile Include="Custom\Interfaces\IPictureElement.cs" />
+    <Compile Include="Custom\Interfaces\ISiteService.cs" />
+    <Compile Include="Custom\Interfaces\ISourceElement.cs" />
+    <Compile Include="Custom\PictureElement.cs" />
+    <Compile Include="Custom\SourceElement.cs" />
+    <Compile Include="Custom\TypedPictureElement.cs" />
+    <Compile Include="Custom\VirtualPictureElement.cs" />
+    <Compile Include="Extensions\ControllerExtensions.cs" />
+    <Compile Include="Extensions\PictureExtensions.cs" />
+    <Compile Include="Extensions\TypedPictureExtensions.cs" />
     <Compile Include="Extensions\UmbracoHelperExtensions.cs" />
+    <Compile Include="Extensions\VirtualPictureExtensions.cs" />
     <Compile Include="Models\Generated\ArticlePage.generated.cs" />
     <Compile Include="Models\Generated\ArticlesLandingPage.generated.cs" />
     <Compile Include="Models\Generated\Content.generated.cs" />
