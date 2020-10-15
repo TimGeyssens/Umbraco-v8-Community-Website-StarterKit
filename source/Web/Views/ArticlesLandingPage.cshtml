@@ -32,7 +32,7 @@
 
                     <h4>
                         <a href="@item.Url()" title="@item.Heading.ToLower()">
-                            @item.Heading
+                            @(!string.IsNullOrEmpty(item.Heading) ? item.Heading : item.Name)
                         </a>
 
                     </h4>

@@ -253,6 +253,8 @@
     <Compile Include="Models\Generated\ArticlesLandingPage.generated.cs" />
     <Compile Include="Models\Generated\Content.generated.cs" />
     <Compile Include="Models\Generated\ContentPage.generated.cs" />
+    <Compile Include="Models\Generated\EventPage.generated.cs" />
+    <Compile Include="Models\Generated\EventsLandingPage.generated.cs" />
     <Compile Include="Models\Generated\FAqentry.generated.cs" />
     <Compile Include="Models\Generated\FaqPage.generated.cs" />
     <Compile Include="Models\Generated\File.generated.cs" />

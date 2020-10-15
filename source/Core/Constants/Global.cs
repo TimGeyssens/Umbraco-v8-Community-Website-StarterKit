@@ -11,6 +11,7 @@ namespace Our.Umbraco.NonProfitFramework.Core.Constants
         public static class PlaceholderImage
         {
             public const string ArticleListingImage = "/static/placeholders/article-listing-placehlder.jpg";
+            public const string EventListingImage = "/static/placeholders/event-listing-placehlder.jpg";
         }
     }
 }
