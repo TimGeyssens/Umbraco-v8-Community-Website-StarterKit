@@ -14,7 +14,7 @@ For more details check out the blog post: [https://dev.to/timgeyssens/how-to-joi
 
 ## Getting Started Guide ##
 
-We have started putting together the getting-started guide for this project for anyone who is new to Visual Studio and Umbraco. Please see [/docs/getting-started.md](/docs/getting-started.md)
+We have started putting together the getting-started guide for this project for anyone who is new to Visual Studio and Umbraco. Please see [/docs/](/docs/readme.md)
 
 ## Design preview
 ### Homepage (on mobile)
